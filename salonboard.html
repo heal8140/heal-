@@ -1,88 +1,106 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>サロンボード | heal</title>
+<title>サロンボード | heal</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Noto Sans JP", sans-serif;
-      background: #f2f2f2;
-      color: #333;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: #f2f2f2;
+  color: #333;
+}
 
-    header {
-      background: #3a3a3a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header {
+  background: #3a3a3a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
 
-    .back {
-      display: inline-block;
-      margin-bottom: 15px;
-      text-decoration: none;
-      color: #555;
-      font-size: 14px;
-    }
+.back {
+  display: inline-block;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
 
-    .back:hover {
-      text-decoration: underline;
-      color: #000;
-    }
+.block {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff;
+  border-left: 4px solid #3a3a3a;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-    .block {
-      margin-bottom: 20px;
-      padding: 15px;
-      background: white;
-      border-left: 4px solid #3a3a3a;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+.block h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
 
-    .block h3 {
-      margin: 0 0 10px;
-      font-size: 16px;
-    }
+.block p {
+  margin: 5px 0;
+  font-size: 14px;
+}
 
-    .block h4 {
-      margin: 10px 0 5px;
-      font-size: 14px;
-    }
+.note {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff3cd;
+  border-left: 4px solid #ffcc00;
+  font-size: 13px;
+}
 
-    .block p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
+/* タブ */
+.tabs {
+  display: flex;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+}
 
-    .note {
-      margin-top: 10px;
-      padding: 10px;
-      background: #fff3cd;
-      border-left: 4px solid #ffcc00;
-      font-size: 13px;
-    }
+.tab {
+  padding: 10px 15px;
+  cursor: pointer;
+  background: #e0e0e0;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+  font-size: 14px;
+}
 
-    .danger {
-      margin-top: 10px;
-      padding: 10px;
-      background: #ffe5e5;
-      border-left: 4px solid #ff4d4d;
-      font-size: 13px;
-    }
-  </style>
+.tab.active {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* iframe */
+iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 8px;
+}
+</style>
 </head>
 
 <body>
@@ -93,38 +111,105 @@
 
 <div class="container">
 
-  <!-- 戻るボタン -->
-  <a href="index.html" class="back">← 戻る</a>
+<a href="index.html" class="back">← 戻る</a>
+
+<!-- タブ -->
+<div class="tabs">
+  <div class="tab active" onclick="showTab(0)">マニュアル</div>
+  <div class="tab" onclick="showTab(1)">公式FAQ</div>
+  <div class="tab" onclick="showTab(2)">サポート情報</div>
+</div>
+
+<!-- タブ① マニュアル -->
+<div class="tab-content active">
 
   <div class="block">
-    <h3>■ サロンボード（HPB予約対応）</h3>
+    <h3>① 基本</h3>
+    <p>・HPB（ホットペッパービューティー）からの予約確認に使用</p>
+    <p>・予約が入ったら必ずサロンボードで処理を行う</p>
+  </div>
 
-    <h4>◆ 基本</h4>
-    <p>・サロンボードではホットペッパービューティー（HPB）からの予約確認を行う</p>
-
-    <h4>◆ 必ず行う作業（重要）</h4>
-    <p>・HPBから予約が入った場合 → 来店処理を必ず行う</p>
-
-    <h4>◆ 来店処理のやり方</h4>
-    <p>・TOPページ右側に表示される「アラート」を確認</p>
-    <p>・該当の予約をクリック</p>
-    <p>・内容を確認して来店処理を行う</p>
-
-    <h4>◆ 確認ポイント（重要）</h4>
-    <p>・実際の施術内容と予約内容に相違がないか確認</p>
-    <p>・メニュー / 時間にズレがあれば修正してから処理</p>
-
-    <div class="danger">
-      ・来店処理のやり忘れは禁止（売上・来店データにズレが出る原因）
-    </div>
+  <div class="block">
+    <h3>② やること（重要）</h3>
+    <p>・HPB予約が入ったら「来店処理」を行う</p>
 
     <div class="note">
-      ・来店後すぐではなく、退店後のタイミングで必ず確認する
+      来店処理をしないと売上・来店データがズレる
     </div>
+  </div>
 
+  <div class="block">
+    <h3>③ 来店処理のやり方</h3>
+    <p>① TOPページ右側のアラートをクリック</p>
+    <p>② 該当予約を開く</p>
+    <p>③ 来店時の施術内容と相違がないか確認</p>
+    <p>④ 問題なければ来店処理を実行</p>
   </div>
 
 </div>
+
+<!-- タブ② FAQ -->
+<div class="tab-content">
+  <div class="block">
+    <h3>公式FAQ</h3>
+    <iframe src="https://sbhd-kirei.salonboard.com/hc/ja"></iframe>
+  </div>
+</div>
+
+<!-- タブ③ サポート -->
+<div class="tab-content">
+
+  <div class="block">
+    <h3>お問い合わせ前に</h3>
+    <p>よくある質問はFAQページにまとまっています。</p>
+    <p>まずはFAQを確認してください。</p>
+  </div>
+
+  <div class="block">
+    <h3>お問い合わせ窓口</h3>
+    <p><strong>電話：</strong>年中無休 10:00〜21:00</p>
+    <p><strong>チャット：</strong>平日のみ 10:00〜19:00</p>
+    <p><strong>メール：</strong>年中無休（20:30まで当日返信）</p>
+  </div>
+
+  <div class="block">
+    <h3>電話番号</h3>
+    <p>0120-36-0493</p>
+  </div>
+
+  <div class="block">
+    <h3>音声ガイダンス</h3>
+    <p>① サロン利用者 → 1番</p>
+    <p>② 営業担当 → 2番</p>
+    <br>
+    <p>・予約修正 → 1番</p>
+    <p>・プリンター → 2番</p>
+    <p>・操作・設定 → 3番</p>
+    <p>・その他 → 4番</p>
+  </div>
+
+  <div class="block">
+    <h3>混雑目安</h3>
+    <p>10:00〜15:00 → 混みやすい</p>
+    <p>15:00〜19:00 → 普通</p>
+    <p>19:00以降 → つながりやすい</p>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+function showTab(index) {
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab, i) => {
+    tab.classList.toggle("active", i === index);
+    contents[i].classList.toggle("active", i === index);
+  });
+}
+</script>
 
 </body>
 </html>

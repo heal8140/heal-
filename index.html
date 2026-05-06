@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>作業マニュアル | Re:U</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background: #3a3a3a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: 0.2s;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin: 40px 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>作業マニュアル</h1>
+</header>
+
+<div class="container">
+
+  <div class="grid">
+
+    <a href="pages/reception.html" class="card">
+      <h2>受付対応</h2>
+      <p>来店〜ご案内までの基本フロー</p>
+    </a>
+
+    <a href="pages/cleaning.html" class="card">
+      <h2>清掃手順</h2>
+      <p>店内・機器の清掃ルール</p>
+    </a>
+
+    <a href="pages/machine.html" class="card">
+      <h2>機械操作</h2>
+      <p>吸入機の使い方・注意点</p>
+    </a>
+
+    <a href="pages/trouble.html" class="card">
+      <h2>トラブル対応</h2>
+      <p>よくある問題と対処方法</p>
+    </a>
+
+  </div>
+
+</div>
+
+<footer>
+  © Re:U Manual
+</footer>
+
+</body>
+</html>

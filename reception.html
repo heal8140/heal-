@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>受付対応 | heal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background: #3a3a3a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .back {
+      margin-bottom: 15px;
+      display: inline-block;
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* タブ */
+    .tabs {
+      display: flex;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      background: #ddd;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .tab.active {
+      background: #3a3a3a;
+      color: white;
+    }
+
+    /* コンテンツ */
+    .content {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    /* ステップ */
+    .step {
+      margin-bottom: 15px;
+      padding: 15px;
+      border-left: 4px solid #3a3a3a;
+      background: #fafafa;
+      border-radius: 5px;
+    }
+
+    .step h3 {
+      margin: 0 0 5px;
+      font-size: 15px;
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>受付対応</h1>
+</header>
+
+<div class="container">
+
+  <a href="../index.html" class="back">← 戻る</a>
+
+  <!-- タブ -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('new')">新規</div>
+    <div class="tab" onclick="showTab('repeat')">既存</div>
+  </div>
+
+  <!-- 新規 -->
+  <div id="new" class="content active">
+
+    <div class="step">
+      <h3>① 来店時の挨拶</h3>
+      <p>笑顔でお迎えし「いらっしゃいませ」とお声がけ</p>
+    </div>
+
+    <div class="step">
+      <h3>② 予約確認</h3>
+      <p>お名前を伺い、予約内容を確認</p>
+    </div>
+
+    <div class="step">
+      <h3>③ カウンセリング</h3>
+      <p>体調や目的をヒアリング</p>
+    </div>
+
+    <div class="step">
+      <h3>④ サービス説明</h3>
+      <p>水素・機械の説明を簡潔に行う</p>
+    </div>
+
+    <div class="step">
+      <h3>⑤ 席へご案内</h3>
+      <p>準備が整い次第ご案内</p>
+    </div>
+
+  </div>
+
+  <!-- 既存 -->
+  <div id="repeat" class="content">
+
+    <div class="step">
+      <h3>① 来店時の挨拶</h3>
+      <p>笑顔でお迎えし「いらっしゃいませ」とお声がけ</p>
+    </div>
+
+    <div class="step">
+      <h3>② 予約確認</h3>
+      <p>お名前確認・メニュー確認</p>
+    </div>
+
+    <div class="step">
+      <h3>③ 席へご案内</h3>
+      <p>準備が整い次第ご案内</p>
+    </div>
+
+    <div class="step">
+      <h3>④ 機械準備</h3>
+      <p>機器のセット・動作確認</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function showTab(type) {
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+
+    if(type === 'new'){
+      document.querySelectorAll('.tab')[0].classList.add('active');
+      document.getElementById('new').classList.add('active');
+    } else {
+      document.querySelectorAll('.tab')[1].classList.add('active');
+      document.getElementById('repeat').classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>サービス説明 | heal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", sans-serif;
+      background: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #3a3a3a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      background: #ddd;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .tab.active {
+      background: #3a3a3a;
+      color: white;
+    }
+
+    .content {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .block {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fafafa;
+      border-left: 4px solid #3a3a3a;
+      border-radius: 5px;
+    }
+
+    .block h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .block p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: 10px;
+      padding: 10px;
+      background: #fff3cd;
+      border-left: 4px solid #ffcc00;
+      font-size: 13px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>サービス説明</h1>
+</header>
+
+<div class="container">
+
+  <a href="index.html" class="back">← 戻る</a>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('hydrogen')">水素</div>
+    <div class="tab" onclick="showTab('god')">ゴッドクリーナー</div>
+    <div class="tab" onclick="showTab('radon')">ラドン</div>
+  </div>
+
+  <!-- 水素 -->
+  <div id="hydrogen" class="content active">
+
+    <div class="block">
+      <h3>① 何か</h3>
+      <p>・水素ガスを吸入することで、体内の悪玉活性酸素を除去するケア</p>
+    </div>
+
+    <div class="block">
+      <h3>② 期待できること</h3>
+      <p>・疲労回復</p>
+      <p>・血流改善</p>
+      <p>・睡眠の質向上</p>
+      <p>・肌トラブルの軽減</p>
+    </div>
+
+    <div class="block">
+      <h3>③ 体感・特徴</h3>
+      <p>・リラックスしているだけでOK</p>
+      <p>・眠くなる方が多い</p>
+      <p>・継続することで変化を実感しやすい</p>
+    </div>
+
+    <div class="block">
+      <h3>④ 注意点</h3>
+      <p>・即効性よりも継続が重要</p>
+    </div>
+
+    <div class="block">
+      <h3>⑤ 説明トーク例</h3>
+      <p>「水素は体の中の悪玉活性酸素を除去してくれるものになります。」</p>
+      <p>「疲れやすさや睡眠の質が気になる方におすすめです。」</p>
+      <p>「リラックスして吸っているだけで大丈夫です。」</p>
+    </div>
+
+  </div>
+
+  <!-- ゴッドクリーナー -->
+  <div id="god" class="content">
+
+    <div class="block">
+      <h3>① 何か</h3>
+      <p>・足湯型のデトックス機器で、体内の老廃物の排出をサポート</p>
+    </div>
+
+    <div class="block">
+      <h3>② 期待できること</h3>
+      <p>・デトックス</p>
+      <p>・むくみ改善</p>
+      <p>・血流促進</p>
+    </div>
+
+    <div class="block">
+      <h3>③ 体感・特徴</h3>
+      <p>・水の色が変化する</p>
+      <p>・身体の状態によって色が変わる</p>
+      <p>・終わった後にスッキリ感を感じやすい</p>
+    </div>
+
+    <div class="block">
+      <h3>④ 注意点</h3>
+      <p>・体調によって反応に個人差あり</p>
+    </div>
+
+    <div class="block">
+      <h3>⑤ 説明トーク例</h3>
+      <p>「こちらは足湯タイプのデトックスになります。」</p>
+      <p>「老廃物の排出をサポートしてくれるものです。」</p>
+      <p>「水の色が変わるので目でも変化が分かります。」</p>
+    </div>
+
+  </div>
+
+  <!-- ラドン -->
+  <div id="radon" class="content">
+
+    <div class="block">
+      <h3>① 何か</h3>
+      <p>・ラドンガスによる温熱・リラクゼーションケア</p>
+    </div>
+
+    <div class="block">
+      <h3>② 期待できること</h3>
+      <p>・血流改善</p>
+      <p>・代謝向上</p>
+      <p>・リラックス効果</p>
+    </div>
+
+    <div class="block">
+      <h3>③ 体感・特徴</h3>
+      <p>・体がじんわり温まる</p>
+      <p>・リラックスしやすい</p>
+    </div>
+
+    <div class="block">
+      <h3>④ 注意点</h3>
+      <p>・体調に応じて無理のない範囲で利用</p>
+    </div>
+
+    <div class="block">
+      <h3>⑤ 説明トーク例</h3>
+      <p>「こちらは体を温めながらリラックスできるケアです。」</p>
+      <p>「血流を良くしたい方におすすめです。」</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function showTab(type) {
+  document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+
+  if(type === 'hydrogen'){
+    document.querySelectorAll('.tab')[0].classList.add('active');
+    document.getElementById('hydrogen').classList.add('active');
+  } else if(type === 'god'){
+    document.querySelectorAll('.tab')[1].classList.add('active');
+    document.getElementById('god').classList.add('active');
+  } else {
+    document.querySelectorAll('.tab')[2].classList.add('active');
+    document.getElementById('radon').classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>

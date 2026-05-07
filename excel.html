@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Excel入力 | heal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Noto Sans JP",sans-serif;
+  background:#f2f2f2;
+  color:#333;
+  line-height:1.7;
+}
+
+header{
+  background:#3a3a3a;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
+.container{
+  max-width:1000px;
+  margin:20px auto;
+  padding:0 15px;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:15px;
+  text-decoration:none;
+  color:#555;
+  font-size:14px;
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:10px 18px;
+  background:#ddd;
+  border-radius:8px 8px 0 0;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.tab:hover{
+  background:#cfcfcf;
+}
+
+.tab.active{
+  background:#3a3a3a;
+  color:#fff;
+}
+
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+.block{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.block h2{
+  margin-top:0;
+  font-size:20px;
+  border-left:4px solid #3a3a3a;
+  padding-left:10px;
+}
+
+.step{
+  margin-top:25px;
+}
+
+.step-title{
+  font-weight:600;
+  margin-bottom:10px;
+  font-size:15px;
+}
+
+.image-box{
+  margin-top:10px;
+  text-align:center;
+}
+
+.image-box img{
+  width:100%;
+  max-width:900px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.note{
+  margin-top:10px;
+  padding:12px;
+  background:#fff3cd;
+  border-left:4px solid #ffcc00;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.danger{
+  margin-top:10px;
+  padding:12px;
+  background:#ffe5e5;
+  border-left:4px solid #ff4d4d;
+  border-radius:6px;
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#888;
+  margin:40px 0 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Excel入力マニュアル</h1>
+</header>
+
+<div class="container">
+
+  <a href="index.html" class="back">← 戻る</a>
+
+  <!-- タブ -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(0)">売上集計</div>
+    <div class="tab" onclick="showTab(1)">チケット管理</div>
+    <div class="tab" onclick="showTab(2)">色々ツール</div>
+    <div class="tab" onclick="showTab(3)">お客様管理</div>
+  </div>
+
+  <!-- タブ① -->
+  <div class="tab-content active">
+
+    <div class="block">
+      <h2>売上集計</h2>
+
+      <div class="step">
+        <div class="step-title">
+          ① 該当月のシートを開く
+        </div>
+
+        <p>
+          レジ締め後、該当月の売上シートを開く
+        </p>
+
+        <div class="image-box">
+          <img src="img/uriage-total01.png" alt="売上集計1">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">
+          ② 売上を入力
+        </div>
+
+        <p>
+          現金・キャッシュレスを確認し入力
+        </p>
+
+        <div class="image-box">
+          <img src="img/uriage-total02.png" alt="売上集計2">
+        </div>
+      </div>
+
+      <div class="note">
+        入力後は必ず金額確認を行う
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- タブ② -->
+  <div class="tab-content">
+
+    <div class="block">
+      <h2>チケット管理</h2>
+
+      <div class="step">
+        <div class="step-title">
+          ① 該当顧客を検索
+        </div>
+
+        <p>
+          名前または顧客番号で検索
+        </p>
+
+        <div class="image-box">
+          <img src="img/ticket01.png" alt="チケット管理1">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">
+          ② 使用回数を入力
+        </div>
+
+        <p>
+          消化回数・残数を確認
+        </p>
+
+        <div class="image-box">
+          <img src="img/ticket02.png" alt="チケット管理2">
+        </div>
+      </div>
+
+      <div class="danger">
+        数式セルの削除・上書き禁止
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- タブ③ -->
+  <div class="tab-content">
+
+    <div class="block">
+      <h2>色々ツール</h2>
+
+      <div class="step">
+        <div class="step-title">
+          ① 必要なツールを選択
+        </div>
+
+        <p>
+          現金・小口など用途に応じて使用
+        </p>
+
+        <div class="image-box">
+          <img src="img/tool01.png" alt="色々ツール1">
+        </div>
+      </div>
+
+      <div class="note">
+        誤入力防止の為、不要箇所は触らない
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- タブ④ -->
+  <div class="tab-content">
+
+    <div class="block">
+      <h2>お客様管理</h2>
+
+      <div class="step">
+        <div class="step-title">
+          ① 顧客情報を検索
+        </div>
+
+        <p>
+          名前・電話番号などで検索
+        </p>
+
+        <div class="image-box">
+          <img src="img/customer01.png" alt="お客様管理1">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">
+          ② 情報を入力・更新
+        </div>
+
+        <p>
+          メモ・注意事項・来店履歴を確認
+        </p>
+
+        <div class="image-box">
+          <img src="img/customer02.png" alt="お客様管理2">
+        </div>
+      </div>
+
+      <div class="danger">
+        顧客情報の削除禁止
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © heal Manual
+</footer>
+
+<script>
+function showTab(index){
+
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab, i)=>{
+    tab.classList.toggle("active", i === index);
+  });
+
+  contents.forEach((content, i)=>{
+    content.classList.toggle("active", i === index);
+  });
+
+}
+</script>
+
+</body>
+</html>

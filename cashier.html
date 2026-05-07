@@ -51,6 +51,11 @@ header{
   border-radius:8px 8px 0 0;
   cursor:pointer;
   font-size:14px;
+  transition:0.2s;
+}
+
+.tab:hover{
+  background:#cfcfcf;
 }
 
 .tab.active{
@@ -82,7 +87,11 @@ header{
 }
 
 .step{
-  margin-top:30px;
+  margin-top:35px;
+}
+
+.step:first-child{
+  margin-top:10px;
 }
 
 .step-title{
@@ -92,7 +101,7 @@ header{
 }
 
 .image-box{
-  margin-top:10px;
+  margin-top:15px;
   text-align:center;
 }
 
@@ -104,7 +113,7 @@ header{
 }
 
 .note{
-  margin-top:10px;
+  margin-top:12px;
   padding:12px;
   background:#fff3cd;
   border-left:4px solid #ffcc00;
@@ -113,7 +122,7 @@ header{
 }
 
 .danger{
-  margin-top:10px;
+  margin-top:15px;
   padding:12px;
   background:#ffe5e5;
   border-left:4px solid #ff4d4d;
@@ -147,7 +156,7 @@ footer{
     <div class="tab" onclick="showTab(2)">現金入力</div>
   </div>
 
-  <!-- タブ① -->
+  <!-- 点検・清算 -->
   <div class="tab-content active">
 
     <div class="block">
@@ -201,7 +210,7 @@ footer{
 
       <div class="step">
         <div class="step-title">
-          ⑤ 差異が無ければ「清算へ進む」
+          ⑤ 差異が無ければ「清算へ進む」を押す
         </div>
 
         <p>
@@ -225,7 +234,7 @@ footer{
 
   </div>
 
-  <!-- タブ② -->
+  <!-- 売上報告 -->
   <div class="tab-content">
 
     <div class="block">
@@ -247,7 +256,7 @@ footer{
         </div>
 
         <div class="image-box">
-          <img src="img/uriage02.PNG" alt="売上報告2">
+          <img src="img/uriage02.png" alt="売上報告2">
         </div>
       </div>
 
@@ -294,7 +303,7 @@ footer{
 
   </div>
 
-  <!-- タブ③ -->
+  <!-- 現金入力 -->
   <div class="tab-content">
 
     <div class="block">
@@ -302,12 +311,12 @@ footer{
 
       <p>
         Excel「色々ツール」内の<br>
-
-         <div class="image-box">
-          <img src="img/genkin01.PNG" alt="現金入力1">
-        </div>
         「現金・小口」の該当月を開いて入力する
       </p>
+
+      <div class="image-box">
+        <img src="img/genkin01.png" alt="現金入力1">
+      </div>
 
       <div class="note">
         入力漏れ注意

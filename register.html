@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>レジ締め | heal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:"Noto Sans JP",sans-serif;
+  background:#f2f2f2;
+  color:#333;
+  line-height:1.7;
+}
+
+header{
+  background:#3a3a3a;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
+.container{
+  max-width:1000px;
+  margin:20px auto;
+  padding:0 15px;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:15px;
+  text-decoration:none;
+  color:#555;
+  font-size:14px;
+}
+
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-bottom:20px;
+  border-bottom:2px solid #ddd;
+}
+
+.tab{
+  padding:10px 15px;
+  background:#e0e0e0;
+  cursor:pointer;
+  border-radius:5px 5px 0 0;
+  font-size:14px;
+}
+
+.tab.active{
+  background:#3a3a3a;
+  color:#fff;
+}
+
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+.block{
+  background:#fff;
+  margin-bottom:20px;
+  padding:20px;
+  border-left:4px solid #3a3a3a;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.block h3{
+  margin-top:0;
+  font-size:18px;
+}
+
+.step{
+  margin-bottom:35px;
+}
+
+.step-title{
+  font-weight:600;
+  margin-bottom:10px;
+  font-size:15px;
+}
+
+.note{
+  margin-top:10px;
+  padding:10px;
+  background:#fff3cd;
+  border-left:4px solid #ffcc00;
+  border-radius:5px;
+  font-size:13px;
+}
+
+.danger{
+  margin-top:10px;
+  padding:10px;
+  background:#ffe5e5;
+  border-left:4px solid #ff4d4d;
+  border-radius:5px;
+  font-size:13px;
+}
+
+.image-box{
+  margin-top:12px;
+  background:#fafafa;
+  border:2px dashed #bbb;
+  border-radius:8px;
+  height:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#888;
+  font-size:14px;
+  text-align:center;
+  padding:10px;
+}
+
+.image-box img{
+  width:100%;
+  height:auto;
+  border-radius:8px;
+}
+
+ul{
+  padding-left:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>レジ締めマニュアル</h1>
+</header>
+
+<div class="container">
+
+<a href="index.html" class="back">← 戻る</a>
+
+<!-- タブ -->
+<div class="tabs">
+  <div class="tab active" onclick="showTab(0)">点検・清算</div>
+  <div class="tab" onclick="showTab(1)">売上報告レシート</div>
+  <div class="tab" onclick="showTab(2)">現金売上入力</div>
+</div>
+
+<!-- タブ1 -->
+<div class="tab-content active">
+
+  <div class="block">
+    <h3>点検・清算レシートの出し方</h3>
+
+    <div class="step">
+      <div class="step-title">
+        ① ホーム画面の「点検・清算」を押す
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入<br>
+        例：img/tenken01.jpg
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ② 「レジ点検・清算」を押す
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ③ 青枠白字の「点検・清算」を押す
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ④ 下記を行う
+      </div>
+
+      <ul>
+        <li>上部の担当者選択で自分の名前を選択</li>
+        <li>ドロアを開ける</li>
+        <li>現金を数え、枚数を入力</li>
+      </ul>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ⑤ 差異が無ければ「清算へ進む」を押す
+      </div>
+
+      <p>
+        本日の現金売上を抜き、
+        冷蔵庫内の茶色い箱のジップロックへ入れる
+      </p>
+
+      <div class="note">
+        現金を抜き忘れないよう注意
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ⑥ レシートが発行される
+      </div>
+
+      <div class="note">
+        後で使用するため保管
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- タブ2 -->
+<div class="tab-content">
+
+  <div class="block">
+    <h3>売上報告レシートの出し方</h3>
+
+    <div class="step">
+      <div class="step-title">
+        ① ホーム画面の「点検・清算」を押す
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ② 最下部の「売上報告シート」を押す
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ③ 右下の「発行」を押す
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ④ レシートが発行される
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">
+        ⑤ レシートを組み合わせる
+      </div>
+
+      <p>
+        売上報告レシートを上にして、
+        点検・清算レシートと重ねる
+      </p>
+
+      <div class="danger">
+        現金欄にマーカーで線を引く
+      </div>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- タブ3 -->
+<div class="tab-content">
+
+  <div class="block">
+    <h3>現金売上の入力</h3>
+
+    <div class="step">
+      <div class="step-title">
+        Excel「色々ツール」を開く
+      </div>
+
+      <p>
+        「現金・小口」の該当月を開き、
+        現金売上を入力する
+      </p>
+
+      <div class="image-box">
+        ここに画像を挿入
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<script>
+function showTab(index){
+
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab, i) => {
+    tab.classList.toggle("active", i === index);
+  });
+
+  contents.forEach((content, i) => {
+    content.classList.toggle("active", i === index);
+  });
+
+}
+</script>
+
+</body>
+</html>

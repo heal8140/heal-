@@ -148,7 +148,7 @@ footer{
   <!-- タブ -->
   <div class="tabs">
     <div class="tab active" onclick="showTab(0)">売上集計</div>
-    <div class="tab" onclick="showTab(1)">チケット管理</div>
+    <div class="tab" onclick="showTab(1)">チケット管理 / ポイント管理</div>
     <div class="tab" onclick="showTab(2)">色々ツール</div>
     <div class="tab" onclick="showTab(3)">お客様管理</div>
   </div>
@@ -182,24 +182,11 @@ footer{
           <img src="img/uriage-total01.png" alt="売上集計1">
         </div>
       </div>
-
-      <div class="step">
-        <div class="step-title">
-          ② 売上を入力
-        </div>
-
-        <p>
-          現金・キャッシュレスを確認し入力
-        </p>
-
-        <div class="image-box">
-          <img src="img/uriage-total02.png" alt="売上集計2">
-        </div>
+      
+ <div class="danger">
+        左上の自動保存がオンになっていることを確認してください。<br>
       </div>
 
-      <div class="note">
-        入力後は必ず金額確認を行う
-      </div>
 
     </div>
 
@@ -209,7 +196,67 @@ footer{
   <div class="tab-content">
 
     <div class="block">
-      <h2>チケット管理</h2>
+     ここではお客様の保有している「チケット」「ポイント」を管理します
+        </div>
+    
+    <div class="block">
+      <h2>チケット管理方法</h2>
+
+      <div class="step">
+        <div class="step-title">
+          ① 該当顧客を検索
+        </div>
+
+        <p>
+          「Crrl」+「F」を押して名前または顧客番号で検索
+        </p>
+        
+         <div class="note">
+        注意点として検索条件を下記に設定して下さい<br>
+        検索場所(H)：ブック<br>
+        検索方向(S)：行or列(どちらでも可)<br>
+        検索対象(L)：値<br>
+         </div>
+
+        <div class="image-box">
+          <img src="img/ticket01.png" alt="チケット管理1">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">
+          ② 使用回数を入力
+        </div>
+
+        <p>
+          使用日 / 入力者を入力後グレーアウト
+        </p>
+
+        <div class="image-box">
+          <img src="img/ticket02.png" alt="チケット管理2">
+        </div>
+
+        <p>
+          グレーアウトの使用する色
+        </p>
+
+        <div class="image-box">
+          <img src="img/ticket02.png" alt="チケット管理3">
+        </div>
+      </div>
+
+      <div class="block">
+     便利なショートカット<br>
+        「Crrl」+「C」= 選択範囲のコピー<br>
+        「Crrl」+「V」= コピーの貼り付け<br>
+        「Crrl」+「X」= 選択範囲の切り取り<br>
+        「Crrl」+「F」= 検索<br>
+        「Crrl」+「D」= 前上のセルをコピー<br>
+        「Crrl」+「+」=今日の日付を自動入力 
+        </div>
+
+       <div class="block">
+      <h2>ポイント管理方法</h2>
 
       <div class="step">
         <div class="step-title">

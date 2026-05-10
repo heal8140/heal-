@@ -138,11 +138,7 @@ footer{
   border-collapse:collapse;
   margin-top:15px;
   background:#fff;
-}
-
-.order-table th:first-child,
-.order-table td:first-child{
-  width:220px;
+  table-layout:fixed;
 }
 
 .order-table th{
@@ -158,6 +154,16 @@ footer{
   border-bottom:1px solid #ddd;
   font-size:14px;
   vertical-align:top;
+}
+
+.order-table th:first-child,
+.order-table td:first-child{
+  width:25%;
+}
+
+.order-table th:last-child,
+.order-table td:last-child{
+  width:75%;
 }
 
 .order-table tr:last-child td{

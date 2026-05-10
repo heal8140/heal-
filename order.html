@@ -9,12 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body{
   margin:0;
   font-family:"Noto Sans JP",sans-serif;
   background:#f2f2f2;
   color:#333;
-  line-height:1.7;
+  line-height:1.8;
 }
 
 header{
@@ -109,8 +110,8 @@ header{
 }
 
 .note{
-  margin-top:10px;
-  padding:12px;
+  margin-top:15px;
+  padding:14px;
   background:#fff3cd;
   border-left:4px solid #ffcc00;
   border-radius:6px;
@@ -118,12 +119,22 @@ header{
 }
 
 .danger{
-  margin-top:10px;
-  padding:12px;
+  margin-top:15px;
+  padding:14px;
   background:#ffe5e5;
   border-left:4px solid #ff4d4d;
   border-radius:6px;
   font-size:14px;
+}
+
+.mail-box{
+  margin-top:15px;
+  padding:20px;
+  background:#fafafa;
+  border:1px solid #e2e2e2;
+  border-radius:8px;
+  font-size:14px;
+  line-height:2;
 }
 
 footer{
@@ -137,38 +148,30 @@ footer{
   width:100%;
   border-collapse:collapse;
   margin-top:15px;
-  background:#fff;
   table-layout:fixed;
 }
 
 .order-table th{
   background:#3a3a3a;
   color:#fff;
-  padding:12px;
+  padding:14px;
   text-align:left;
   font-size:14px;
+  width:50%;
 }
 
 .order-table td{
-  padding:12px;
+  padding:14px;
   border-bottom:1px solid #ddd;
   font-size:14px;
   vertical-align:top;
-}
-
-.order-table th:first-child,
-.order-table td:first-child{
-  width:25%;
-}
-
-.order-table th:last-child,
-.order-table td:last-child{
-  width:75%;
+  width:50%;
 }
 
 .order-table tr:last-child td{
   border-bottom:none;
 }
+
 </style>
 </head>
 
@@ -207,10 +210,6 @@ footer{
           在庫状況を確認し、必要数を把握してください。<br>
           色々ツールの在庫管理から確認できます。
         </p>
-
-        <div class="image-box">
-          <img src="img/order01.png" alt="発注前確認1">
-        </div>
 
       </div>
 
@@ -327,7 +326,7 @@ footer{
         <strong>メール文章</strong>
       </div>
 
-      <div class="block">
+      <div class="mail-box">
 
         株式会社オーセンテック<br><br>
 
@@ -373,7 +372,7 @@ footer{
         <strong>送信例</strong>
       </div>
 
-      <div class="block">
+      <div class="mail-box">
 
         あいこさん<br>
         いつも大変お世話になっております。<br><br>
@@ -422,7 +421,7 @@ footer{
         <strong>送信例</strong>
       </div>
 
-      <div class="block">
+      <div class="mail-box">
 
         唐川様<br>
         いつも大変お世話になっております。<br><br>
@@ -443,133 +442,6 @@ footer{
         03-5946-8140<br><br>
 
         よろしくお願い申し上げます。
-
-      </div>
-
-    </div>
-
-    <!-- ハイドロ・フォルテ -->
-    <div class="block">
-
-      <h2>ハイドロ・フォルテ</h2>
-
-      <table class="order-table">
-
-        <tr>
-          <th>発注先</th>
-          <th>発注方法</th>
-        </tr>
-
-        <tr>
-          <td>山口醫院</td>
-          <td>LINEであいこさんへ連絡</td>
-        </tr>
-
-      </table>
-
-      <div class="note">
-        <strong>送信例</strong>
-      </div>
-
-      <div class="block">
-
-        あいこさん<br>
-        いつも大変お世話になっております。<br><br>
-
-        以下、注文をよろしくお願い申し上げます。<br>
-        ※納品日をお知らせいただけますと幸いです。<br><br>
-
-        【注文内容】<br>
-        ハイドロフォルテ×50箱<br><br>
-
-        【請求先】<br>
-        株式会社MARCH<br><br>
-
-        【送り先】<br>
-        〒162-0808<br>
-        東京都新宿区天神町17番地　KORI 1F-A<br>
-        水素サロンヒール<br>
-        03-5946-8140<br><br>
-
-        よろしくお願い申し上げます。
-
-      </div>
-
-    </div>
-
-    <!-- ハイゲンキ -->
-    <div class="block">
-
-      <h2>ハイゲンキ</h2>
-
-      <table class="order-table">
-
-        <tr>
-          <th>発注先</th>
-          <th>発注方法</th>
-        </tr>
-
-        <tr>
-          <td>0120-132-345</td>
-          <td>
-            専用ダイヤルへ電話<br>
-            会員コード：270<br>
-            送り先：水素サロンheal<br>
-            請求先：宮本鈴子
-          </td>
-        </tr>
-
-      </table>
-
-    </div>
-
-    <!-- 電極棒 -->
-    <div class="block">
-
-      <h2>電極棒</h2>
-
-      <table class="order-table">
-
-        <tr>
-          <th>発注先</th>
-          <th>発注方法</th>
-        </tr>
-
-        <tr>
-          <td>株式会社マインドフィットネス</td>
-          <td>メールを送信</td>
-        </tr>
-
-      </table>
-
-      <div class="note">
-        ・注文書(PDF)を作成して添付してください。<br>
-        ・作成手順は「デスクトップ → 注文書フォルダ」の雛形を使用してください。<br>
-        ・変更箇所は「日付」「担当氏名」「数量」「PDFの名前」です。
-      </div>
-
-      <div class="note">
-        <strong>メール文章</strong>
-      </div>
-
-      <div class="block">
-
-        株式会社マインドフィットネス<br><br>
-
-        ご担当者様<br><br>
-
-        いつもお世話になっております。<br>
-        水素サロンheal　〇〇(苗字)でございます。<br><br>
-
-        電極棒の注文書を送信致します。<br><br>
-
-        何卒ご査収の程、宜しくお願い申し上げます。<br><br>
-
-        ～～～～～～～～～<br>
-        水素サロンheal<br>
-        03-5946-8140<br>
-        〇〇(苗字)　〇〇(氏名)<br>
-        ～～～～～～～～～
 
       </div>
 
@@ -633,10 +505,6 @@ footer{
           発注・納品後は在庫管理表へ入力してください。
         </p>
 
-        <div class="image-box">
-          <img src="img/order08.png" alt="在庫管理1">
-        </div>
-
       </div>
 
       <div class="danger">
@@ -654,6 +522,7 @@ footer{
 </footer>
 
 <script>
+
 function showTab(index){
 
   const tabs = document.querySelectorAll(".tab");
@@ -668,6 +537,7 @@ function showTab(index){
   });
 
 }
+
 </script>
 
 </body>

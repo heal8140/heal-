@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>役立つ資料 | heal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:"Noto Sans JP",sans-serif;
+  background:#f2f2f2;
+  color:#333;
+  line-height:1.7;
+}
+
+header{
+  background:#3a3a3a;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
+.container{
+  max-width:1000px;
+  margin:20px auto;
+  padding:0 15px;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:15px;
+  text-decoration:none;
+  color:#555;
+  font-size:14px;
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:10px 18px;
+  background:#ddd;
+  border-radius:8px 8px 0 0;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.tab:hover{
+  background:#cfcfcf;
+}
+
+.tab.active{
+  background:#3a3a3a;
+  color:#fff;
+}
+
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+.block{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.block h2{
+  margin-top:0;
+  border-left:4px solid #3a3a3a;
+  padding-left:10px;
+}
+
+.image-box{
+  margin-top:15px;
+}
+
+.image-box img{
+  width:100%;
+  border-radius:10px;
+}
+
+.note{
+  margin-top:10px;
+  padding:12px;
+  background:#fff3cd;
+  border-left:4px solid #ffcc00;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.pdf-link{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 15px;
+  background:#3a3a3a;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  transition:0.2s;
+}
+
+.pdf-link:hover{
+  opacity:0.85;
+}
+
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#888;
+  margin:40px 0 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>役立つ資料</h1>
+</header>
+
+<div class="container">
+
+  <a href="index.html" class="back">← 戻る</a>
+
+  <!-- タブ -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(0)">水素資料</div>
+    <div class="tab" onclick="showTab(1)">ゴッドクリーナー</div>
+    <div class="tab" onclick="showTab(2)">接客補助</div>
+  </div>
+
+  <!-- タブ① -->
+  <div class="tab-content active">
+
+    <div class="block">
+
+      <h2>水素について</h2>
+
+      <p>
+        水素説明時に使用する参考資料です。
+      </p>
+
+      <div class="note">
+        お客様へ断定的な表現は避けてください
+      </div>
+
+      <div class="image-box">
+        <img src="img/document01.png" alt="">
+      </div>
+
+      <a href="pdf/sample.pdf" class="pdf-link" target="_blank">
+        PDFを開く
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- タブ② -->
+  <div class="tab-content">
+
+    <div class="block">
+
+      <h2>ゴッドクリーナー資料</h2>
+
+      <p>
+        説明用資料
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- タブ③ -->
+  <div class="tab-content">
+
+    <div class="block">
+
+      <h2>接客補助資料</h2>
+
+      <p>
+        カウンセリング時に使用
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © heal Manual
+</footer>
+
+<script>
+
+function showTab(index){
+
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab, i)=>{
+    tab.classList.toggle("active", i === index);
+  });
+
+  contents.forEach((content, i)=>{
+    content.classList.toggle("active", i === index);
+  });
+
+}
+
+</script>
+
+</body>
+</html>

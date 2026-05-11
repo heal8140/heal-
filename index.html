@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+
     body {
       margin: 0;
       font-family: "Noto Sans JP", sans-serif;
@@ -30,6 +31,27 @@
       letter-spacing: 1px;
     }
 
+    .search-area{
+      max-width:1000px;
+      margin:20px auto 10px;
+      padding:0 15px;
+    }
+
+    .search-area input{
+      width:100%;
+      padding:14px 16px;
+      border:none;
+      border-radius:10px;
+      font-size:15px;
+      box-sizing:border-box;
+      background:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .search-area input:focus{
+      outline:none;
+    }
+
     .container {
       max-width: 1000px;
       margin: 30px auto;
@@ -46,14 +68,14 @@
     }
 
     .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-  gap: 15px;
-}
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+      gap: 15px;
+    }
 
     .card {
       background: white;
-      padding: 10px 16px; /* ← 上下余白を小さく */
+      padding: 10px 16px;
       border-radius: 10px;
       text-decoration: none;
       color: #333;
@@ -61,7 +83,8 @@
       transition: 0.2s;
       position: relative;
 
-      height: 60px; /* ← 高さをコンパクトに */
+      height: 60px;
+      box-sizing: border-box;
 
       display: flex;
       flex-direction: column;
@@ -75,9 +98,13 @@
 
     .card h2,
     .card h3 {
-      margin: 0 0 4px; /* ← 下余白も少し減らす */
+      margin: 0 0 4px;
       font-size: 16px;
       font-weight: 600;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .card p {
@@ -85,6 +112,10 @@
       color: #666;
       margin: 0;
       line-height: 1.5;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .badge {
@@ -108,6 +139,7 @@
       color: #888;
       margin: 40px 0 20px;
     }
+
   </style>
 </head>
 
@@ -116,6 +148,16 @@
 <header>
   <h1>作業マニュアル</h1>
 </header>
+
+<!-- 検索 -->
+<div class="search-area">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="マニュアル検索..."
+    onkeyup="searchManual()"
+  >
+</div>
 
 <div class="container">
 
@@ -204,9 +246,9 @@
     </a>
 
     <a href="document.html" class="card">
-    <h2>役立つ資料</h2>
-    <p>説明資料・参考データ</p>
-  </a>
+      <h2>役立つ資料</h2>
+      <p>説明資料・参考データ</p>
+    </a>
 
   </div>
 
@@ -215,6 +257,32 @@
 <footer>
   © heal Manual
 </footer>
+
+<script>
+
+function searchManual(){
+
+  const input = document.getElementById("searchInput");
+  const filter = input.value.toLowerCase();
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+
+    const title = card.querySelector("h2")?.innerText.toLowerCase() || "";
+    const text = card.querySelector("p")?.innerText.toLowerCase() || "";
+
+    if(title.includes(filter) || text.includes(filter)){
+      card.style.display = "";
+    }else{
+      card.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
 
 </body>
 </html>

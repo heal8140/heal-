@@ -308,6 +308,104 @@
 
 <script>
 
+const pages = [
+
+  {
+    title: "受付対応",
+    url: "reception.html"
+  },
+
+  {
+    title: "機械操作",
+    url: "machine.html"
+  },
+
+  {
+    title: "トラブル対応",
+    url: "trouble.html"
+  },
+
+  {
+    title: "サービス説明",
+    url: "service.html"
+  },
+
+  {
+    title: "カミングスーン",
+    url: "comingsoon.html"
+  },
+
+  {
+    title: "サロンボード",
+    url: "salonboard.html"
+  },
+
+  {
+    title: "レジ締め",
+    url: "cashier.html"
+  },
+
+  {
+    title: "発注方法",
+    url: "order.html"
+  },
+
+  {
+    title: "Excel入力",
+    url: "excel.html"
+  },
+
+  {
+    title: "その他",
+    url: "other.html"
+  },
+
+  {
+    title: "ルール",
+    url: "rule.html"
+  },
+
+  {
+    title: "役立つ資料",
+    url: "document.html"
+  }
+
+];
+
+
+// 各ページ本文保存
+const pageContents = {};
+
+
+// 初回読み込み
+async function loadPageContents(){
+
+  for(const page of pages){
+
+    try{
+
+      const response = await fetch(page.url);
+      const html = await response.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+
+      const text = doc.body.innerText.toLowerCase();
+
+      pageContents[page.url] = text;
+
+    }catch(error){
+
+      console.error("読み込み失敗:", page.url);
+
+    }
+
+  }
+
+}
+
+
+// 検索
 function searchManual(){
 
   const input = document.getElementById("searchInput");
@@ -317,23 +415,45 @@ function searchManual(){
 
   cards.forEach(card => {
 
-    const title = card.querySelector("h2")?.innerText.toLowerCase() || "";
-    const text = card.querySelector("p")?.innerText.toLowerCase() || "";
-    const keywords = card.dataset.keywords?.toLowerCase() || "";
+    const href =
+      card.getAttribute("href");
+
+    const title =
+      card.querySelector("h2")?.innerText.toLowerCase() || "";
+
+    const text =
+      card.querySelector("p")?.innerText.toLowerCase() || "";
+
+    const keywords =
+      card.dataset.keywords?.toLowerCase() || "";
+
+    const pageText =
+      pageContents[href] || "";
 
     if(
+
       title.includes(filter) ||
       text.includes(filter) ||
-      keywords.includes(filter)
+      keywords.includes(filter) ||
+      pageText.includes(filter)
+
     ){
+
       card.style.display = "";
+
     }else{
+
       card.style.display = "none";
+
     }
 
   });
 
 }
+
+
+// 初回実行
+loadPageContents();
 
 </script>
 

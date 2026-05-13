@@ -76,6 +76,7 @@ header{
 .tab-content.active{
   display:block;
 }
+
 /* ブロック */
 
 .block{
@@ -93,8 +94,17 @@ header{
   padding-left:10px;
 }
 
+/* ステップ */
+
 .step{
   margin-top:30px;
+  padding-bottom:25px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.step:last-child{
+  border-bottom:none;
+  padding-bottom:0;
 }
 
 .step-title{
@@ -102,6 +112,8 @@ header{
   font-size:17px;
   margin-bottom:10px;
 }
+
+/* ノート */
 
 .note{
   margin-top:10px;
@@ -112,7 +124,7 @@ header{
   font-size:14px;
 }
 
-  .gray-note{
+.gray-note{
   margin-top:10px;
   padding:14px;
   background:#fafafa;
@@ -129,6 +141,16 @@ header{
   border-radius:6px;
   font-size:14px;
 }
+
+/* リンク */
+
+.link{
+  display:inline-block;
+  margin-top:10px;
+  font-size:14px;
+}
+
+/* 画像 */
 
 .image-box{
   margin-top:15px;
@@ -186,14 +208,14 @@ footer{
         <div class="gray-note">
           スタッフ同士の会話時はウィスパーボイス(ささやき声)でお願いします。
         </div>
-        
+
         <div class="danger">
           来店中のお客様は席番号で呼んでください。
         </div>
 
-        <a href="trouble.html#voice-trouble">
-    → 声量による過去のクレーム
-  </a>
+        <a href="trouble.html#voice-trouble" class="link">
+          → 声量による過去のクレーム
+        </a>
 
       </div>
 
@@ -230,7 +252,7 @@ footer{
           ④ 在庫・備品異常について
         </div>
 
-       <div class="gray-note">
+        <div class="gray-note">
           在庫不足・破損・異常を発見した場合は必ず共有をお願いします。
         </div>
 

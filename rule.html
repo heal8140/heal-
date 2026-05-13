@@ -39,6 +39,43 @@ header{
   font-size:14px;
 }
 
+/* タブ */
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:10px 18px;
+  background:#ddd;
+  border-radius:8px 8px 0 0;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.tab:hover{
+  background:#cfcfcf;
+}
+
+.tab.active{
+  background:#3a3a3a;
+  color:#fff;
+}
+
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+/* ブロック */
+
 .block{
   background:#fff;
   padding:20px;
@@ -114,71 +151,153 @@ footer{
 
   <a href="index.html" class="back">← 戻る</a>
 
-  <div class="block">
+  <!-- タブ -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(0)">基本ルール</div>
+    <div class="tab" onclick="showTab(1)">接客ルール</div>
+    <div class="tab" onclick="showTab(2)">清掃・備品</div>
+  </div>
 
-    <h2>基本ルール</h2>
+  <!-- タブ① -->
+  <div class="tab-content active">
 
-    <!-- ① -->
-    <div class="step">
+    <div class="block">
 
-      <div class="step-title">
-        ① 接客時について
+      <h2>基本ルール</h2>
+
+      <!-- ① -->
+      <div class="step">
+
+        <div class="step-title">
+          ① 接客時について
+        </div>
+
+        <div class="note">
+          お客様対応中は私語を控え、店内の雰囲気維持をお願いします。
+        </div>
+
       </div>
 
-      <div class="note">
-        お客様対応中は私語を控え、店内の雰囲気維持をお願いします。
+      <!-- ② -->
+      <div class="step">
+
+        <div class="step-title">
+          ② 清掃について
+        </div>
+
+        <div class="note">
+          ゴミ・髪の毛・水回りなど、気付いたタイミングで清掃をお願いします。
+        </div>
+
+      </div>
+
+      <!-- ③ -->
+      <div class="step">
+
+        <div class="step-title">
+          ③ 備品使用について
+        </div>
+
+        <div class="note">
+          使用した備品は必ず元の位置へ戻してください。
+        </div>
+
+      </div>
+
+      <!-- ④ -->
+      <div class="step">
+
+        <div class="step-title">
+          ④ 在庫・備品異常について
+        </div>
+
+        <div class="danger">
+          在庫不足・破損・異常を発見した場合は必ず共有をお願いします。
+        </div>
+
+      </div>
+
+      <!-- ⑤ -->
+      <div class="step">
+
+        <div class="step-title">
+          ⑤ 個人判断について
+        </div>
+
+        <div class="danger">
+          不明点がある場合は自己判断せず、必ず確認をお願いします。
+        </div>
+
       </div>
 
     </div>
 
-    <!-- ② -->
-    <div class="step">
+  </div>
 
-      <div class="step-title">
-        ② 清掃について
+  <!-- タブ② -->
+  <div class="tab-content">
+
+    <div class="block">
+
+      <h2>接客ルール</h2>
+
+      <div class="step">
+
+        <div class="step-title">
+          ① 声掛けについて
+        </div>
+
+        <div class="note">
+          お客様への声掛けは丁寧な言葉遣いを徹底してください。
+        </div>
+
       </div>
 
-      <div class="note">
-        ゴミ・髪の毛・水回りなど、気付いたタイミングで清掃をお願いします。
-      </div>
+      <div class="step">
 
-    </div>
+        <div class="step-title">
+          ② 説明について
+        </div>
 
-    <!-- ③ -->
-    <div class="step">
+        <div class="danger">
+          医療的断定表現は禁止です。
+        </div>
 
-      <div class="step-title">
-        ③ 備品使用について
-      </div>
-
-      <div class="note">
-        使用した備品は必ず元の位置へ戻してください。
-      </div>
-
-    </div>
-
-    <!-- ④ -->
-    <div class="step">
-
-      <div class="step-title">
-        ④ 在庫・備品異常について
-      </div>
-
-      <div class="danger">
-        在庫不足・破損・異常を発見した場合は必ず共有をお願いします。
       </div>
 
     </div>
 
-    <!-- ⑤ -->
-    <div class="step">
+  </div>
 
-      <div class="step-title">
-        ⑤ 個人判断について
+  <!-- タブ③ -->
+  <div class="tab-content">
+
+    <div class="block">
+
+      <h2>清掃・備品</h2>
+
+      <div class="step">
+
+        <div class="step-title">
+          ① 使用後清掃
+        </div>
+
+        <div class="note">
+          使用後はアルコール消毒・頭シート交換を必ず実施してください。
+        </div>
+
       </div>
 
-      <div class="danger">
-        不明点がある場合は自己判断せず、必ず確認をお願いします。
+      <div class="step">
+
+        <div class="step-title">
+          ② 備品補充
+        </div>
+
+        <div class="note">
+          備品残量が少ない場合は早めに共有をお願いします。
+        </div>
+
       </div>
 
     </div>
@@ -190,6 +309,25 @@ footer{
 <footer>
   © heal Manual
 </footer>
+
+<script>
+
+function showTab(index){
+
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab, i)=>{
+    tab.classList.toggle("active", i === index);
+  });
+
+  contents.forEach((content, i)=>{
+    content.classList.toggle("active", i === index);
+  });
+
+}
+
+</script>
 
 </body>
 </html>

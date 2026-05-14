@@ -404,7 +404,10 @@ async function loadPageContents(){
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
 
-      const text = doc.body.innerText.toLowerCase();
+      const text =
+        doc.body.innerText
+        .toLowerCase()
+        .replace(/\s+/g, "");
 
       pageContents[page.url] = text;
 
@@ -422,10 +425,16 @@ async function loadPageContents(){
 // 検索
 function searchManual(){
 
-  const input = document.getElementById("searchInput");
-  const filter = input.value.toLowerCase();
+  const input =
+    document.getElementById("searchInput");
 
-  const cards = document.querySelectorAll(".card");
+  const filter =
+    input.value
+    .toLowerCase()
+    .replace(/\s+/g, "");
+
+  const cards =
+    document.querySelectorAll(".card");
 
   cards.forEach(card => {
 
@@ -433,13 +442,21 @@ function searchManual(){
       card.getAttribute("href");
 
     const title =
-      card.querySelector("h2")?.innerText.toLowerCase() || "";
+      card.querySelector("h2")
+      ?.innerText
+      .toLowerCase()
+      .replace(/\s+/g, "") || "";
 
     const text =
-      card.querySelector("p")?.innerText.toLowerCase() || "";
+      card.querySelector("p")
+      ?.innerText
+      .toLowerCase()
+      .replace(/\s+/g, "") || "";
 
     const keywords =
-      card.dataset.keywords?.toLowerCase() || "";
+      card.dataset.keywords
+      ?.toLowerCase()
+      .replace(/\s+/g, "") || "";
 
     const pageText =
       pageContents[href] || "";

@@ -10,25 +10,25 @@
 
   <style>
 
-    body {
-      margin: 0;
-      font-family: "Noto Sans JP", sans-serif;
-      background: #f2f2f2;
-      color: #333;
+    body{
+      margin:0;
+      font-family:"Noto Sans JP",sans-serif;
+      background:#f2f2f2;
+      color:#333;
     }
 
-    header {
-      background: #3a3a3a;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    header{
+      background:#3a3a3a;
+      color:#fff;
+      padding:20px;
+      text-align:center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: 1px;
+    header h1{
+      margin:0;
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:1px;
     }
 
     .search-area{
@@ -52,92 +52,119 @@
       outline:none;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 15px;
+    .container{
+      max-width:1000px;
+      margin:30px auto;
+      padding:0 15px;
     }
 
-    .section-title {
-      margin: 25px 0 10px;
-      font-size: 16px;
-      color: #555;
-      border-left: 4px solid #3a3a3a;
-      padding-left: 10px;
-      font-weight: 600;
+    .section-title{
+      margin:25px 0 10px;
+      font-size:16px;
+      color:#555;
+      border-left:4px solid #3a3a3a;
+      padding-left:10px;
+      font-weight:600;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-      gap: 15px;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,300px));
+      gap:15px;
     }
 
-    .card {
-      background: white;
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #333;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: 0.2s;
-      position: relative;
+    .card{
+      background:#fff;
+      padding:10px 16px;
+      border-radius:10px;
+      text-decoration:none;
+      color:#333;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      transition:0.2s;
+      position:relative;
 
-      height: 60px;
-      box-sizing: border-box;
+      height:60px;
+      box-sizing:border-box;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 15px rgba(0,0,0,0.1);
     }
 
-    .card h2,
-    .card h3 {
-      margin: 0 0 4px;
-      font-size: 16px;
-      font-weight: 600;
+    .card h2{
+      margin:0 0 4px;
+      font-size:16px;
+      font-weight:600;
 
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
     }
 
-    .card p {
-      font-size: 13px;
-      color: #666;
-      margin: 0;
-      line-height: 1.5;
+    .card p{
+      font-size:13px;
+      color:#666;
+      margin:0;
+      line-height:1.5;
 
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
     }
 
-    .badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #999;
-      color: white;
-      font-size: 10px;
-      padding: 3px 6px;
-      border-radius: 5px;
+    .badge{
+      position:absolute;
+      top:10px;
+      right:10px;
+      background:#999;
+      color:#fff;
+      font-size:10px;
+      padding:3px 6px;
+      border-radius:5px;
     }
 
-    .new {
-      background: #6c8ef5;
+    .new{
+      background:#6c8ef5;
     }
 
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-      margin: 40px 0 20px;
+    .loading{
+      text-align:center;
+      font-size:13px;
+      color:#777;
+      margin-top:10px;
+    }
+
+    .no-result{
+      display:none;
+      text-align:center;
+      color:#777;
+      margin-top:30px;
+      font-size:14px;
+    }
+
+    footer{
+      text-align:center;
+      font-size:12px;
+      color:#888;
+      margin:40px 0 20px;
+    }
+
+    @media(max-width:768px){
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .card{
+        height:auto;
+        min-height:60px;
+      }
+
     }
 
   </style>
@@ -151,18 +178,25 @@
 
 <!-- 検索 -->
 <div class="search-area">
+
   <input
     type="text"
     id="searchInput"
     placeholder="マニュアル検索..."
     onkeyup="searchManual()"
   >
+
+  <div class="loading" id="loadingText">
+    マニュアル読み込み中...
+  </div>
+
 </div>
 
 <div class="container">
 
   <!-- 基本業務 -->
   <div class="section-title">基本業務</div>
+
   <div class="grid">
 
     <a
@@ -177,7 +211,7 @@
     <a
       href="machine.html"
       class="card"
-      data-keywords="機械 レプトン ゴッドクリーナー ラドン 操作"
+      data-keywords="機械 レプトン ゴッドクリーナー ラドン 操作 水 入れ替え 糖尿病 スタートボタン"
     >
       <h2>機械操作</h2>
       <p>レプトン / ゴッドクリーナー / ラドン</p>
@@ -186,7 +220,7 @@
     <a
       href="trouble.html"
       class="card"
-      data-keywords="クレーム エラー 問題 対応"
+      data-keywords="クレーム エラー 問題 対応 予約ミス 誤案内"
     >
       <h2>トラブル対応</h2>
       <p>過去クレームと対応例</p>
@@ -196,6 +230,7 @@
 
   <!-- 説明・接客 -->
   <div class="section-title">説明・接客</div>
+
   <div class="grid">
 
     <a
@@ -220,6 +255,7 @@
 
   <!-- システム・操作 -->
   <div class="section-title">システム・操作</div>
+
   <div class="grid">
 
     <a
@@ -263,6 +299,7 @@
 
   <!-- データ管理 -->
   <div class="section-title">データ管理</div>
+
   <div class="grid">
 
     <a
@@ -278,6 +315,7 @@
 
   <!-- その他 -->
   <div class="section-title">その他</div>
+
   <div class="grid">
 
     <a
@@ -309,6 +347,10 @@
 
   </div>
 
+  <div class="no-result" id="noResult">
+    該当するマニュアルがありません
+  </div>
+
 </div>
 
 <footer>
@@ -320,78 +362,78 @@
 const pages = [
 
   {
-    title: "受付対応",
-    url: "reception.html"
+    title:"受付対応",
+    url:"reception.html"
   },
 
   {
-    title: "機械操作",
-    url: "machine.html"
+    title:"機械操作",
+    url:"machine.html"
   },
 
   {
-    title: "トラブル対応",
-    url: "trouble.html"
+    title:"トラブル対応",
+    url:"trouble.html"
   },
 
   {
-    title: "サービス説明",
-    url: "service.html"
+    title:"サービス説明",
+    url:"service.html"
   },
 
   {
-    title: "特典・オプション",
-    url: "option.html"
+    title:"特典・オプション",
+    url:"option.html"
   },
 
   {
-    title: "カミングスーン",
-    url: "comingsoon.html"
+    title:"カミングスーン",
+    url:"comingsoon.html"
   },
 
   {
-    title: "サロンボード",
-    url: "salonboard.html"
+    title:"サロンボード",
+    url:"salonboard.html"
   },
 
   {
-    title: "レジ締め",
-    url: "cashier.html"
+    title:"レジ締め",
+    url:"cashier.html"
   },
 
   {
-    title: "発注方法",
-    url: "order.html"
+    title:"発注方法",
+    url:"order.html"
   },
 
   {
-    title: "Excel入力",
-    url: "excel.html"
+    title:"Excel入力",
+    url:"excel.html"
   },
 
   {
-    title: "その他",
-    url: "other.html"
+    title:"その他",
+    url:"other.html"
   },
 
   {
-    title: "ルール",
-    url: "rule.html"
+    title:"ルール",
+    url:"rule.html"
   },
 
   {
-    title: "役立つ資料",
-    url: "document.html"
+    title:"役立つ資料",
+    url:"document.html"
   }
 
 ];
 
 
-// 各ページ本文保存
+// 本文保存
 const pageContents = {};
 
 
-// 初回読み込み
+// ページ読み込み
 async function loadPageContents(){
 
   for(const page of pages){
@@ -399,25 +441,43 @@ async function loadPageContents(){
     try{
 
       const response = await fetch(page.url);
+
+      if(!response.ok){
+        throw new Error("読み込み失敗");
+      }
+
       const html = await response.text();
 
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, "text/html");
+      const parser =
+        new DOMParser();
+
+      const doc =
+        parser.parseFromString(
+          html,
+          "text/html"
+        );
 
       const text =
-        doc.body.innerText
+        doc.body.textContent
         .toLowerCase()
-        .replace(/\s+/g, "");
+        .replace(/\s+/g,"");
 
       pageContents[page.url] = text;
 
+      console.log(page.url + " 読み込み成功");
+
     }catch(error){
 
-      console.error("読み込み失敗:", page.url);
+      console.error(
+        "読み込み失敗:",
+        page.url
+      );
 
     }
 
   }
+
+  document.getElementById("loadingText").style.display = "none";
 
 }
 
@@ -431,60 +491,68 @@ function searchManual(){
   const filter =
     input.value
     .toLowerCase()
-    .replace(/\s+/g, "");
+    .replace(/\s+/g,"");
 
   const cards =
     document.querySelectorAll(".card");
 
-  cards.forEach(card => {
+  let visibleCount = 0;
+
+  cards.forEach(card=>{
 
     const href =
       card.getAttribute("href");
 
     const title =
       card.querySelector("h2")
-      ?.innerText
+      ?.textContent
       .toLowerCase()
-      .replace(/\s+/g, "") || "";
+      .replace(/\s+/g,"") || "";
 
     const text =
       card.querySelector("p")
-      ?.innerText
+      ?.textContent
       .toLowerCase()
-      .replace(/\s+/g, "") || "";
+      .replace(/\s+/g,"") || "";
 
     const keywords =
       card.dataset.keywords
       ?.toLowerCase()
-      .replace(/\s+/g, "") || "";
+      .replace(/\s+/g,"") || "";
 
     const pageText =
       pageContents[href] || "";
 
-    if(
+    const isMatch =
 
       title.includes(filter) ||
       text.includes(filter) ||
       keywords.includes(filter) ||
-      pageText.includes(filter)
+      pageText.includes(filter);
 
-    ){
+    card.style.display =
+      isMatch ? "" : "none";
 
-      card.style.display = "";
-
-    }else{
-
-      card.style.display = "none";
-
+    if(isMatch){
+      visibleCount++;
     }
 
   });
+
+  document.getElementById("noResult").style.display =
+    visibleCount === 0 ? "block" : "none";
 
 }
 
 
 // 初回実行
-loadPageContents();
+window.addEventListener("load", async ()=>{
+
+  await loadPageContents();
+
+  console.log("全文検索準備完了");
+
+});
 
 </script>
 

@@ -52,10 +52,19 @@
       outline:none;
     }
 
+    .search-area input:disabled{
+      background:#eee;
+      cursor:not-allowed;
+    }
+
     .container{
       max-width:1000px;
       margin:30px auto;
       padding:0 15px;
+    }
+
+    .section{
+      margin-bottom:30px;
     }
 
     .section-title{
@@ -69,7 +78,7 @@
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,300px));
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:15px;
     }
 
@@ -83,7 +92,7 @@
       transition:0.2s;
       position:relative;
 
-      height:60px;
+      min-height:60px;
       box-sizing:border-box;
 
       display:flex;
@@ -160,11 +169,6 @@
         grid-template-columns:1fr;
       }
 
-      .card{
-        height:auto;
-        min-height:60px;
-      }
-
     }
 
   </style>
@@ -184,6 +188,7 @@
     id="searchInput"
     placeholder="マニュアル検索..."
     onkeyup="searchManual()"
+    disabled
   >
 
   <div class="loading" id="loadingText">
@@ -195,155 +200,175 @@
 <div class="container">
 
   <!-- 基本業務 -->
-  <div class="section-title">基本業務</div>
+  <div class="section">
 
-  <div class="grid">
+    <div class="section-title">基本業務</div>
 
-    <a
-      href="reception.html"
-      class="card"
-      data-keywords="受付 来店 初回 新規 既存 接客"
-    >
-      <h2>受付対応</h2>
-      <p>新規・既存の来店フロー</p>
-    </a>
+    <div class="grid">
 
-    <a
-      href="machine.html"
-      class="card"
-      data-keywords="機械 レプトン ゴッドクリーナー ラドン 操作 水 入れ替え 糖尿病 スタートボタン"
-    >
-      <h2>機械操作</h2>
-      <p>レプトン / ゴッドクリーナー / ラドン</p>
-    </a>
+      <a
+        href="reception.html"
+        class="card"
+        data-keywords="受付 来店 初回 新規 既存 接客"
+      >
+        <h2>受付対応</h2>
+        <p>新規・既存の来店フロー</p>
+      </a>
 
-    <a
-      href="trouble.html"
-      class="card"
-      data-keywords="クレーム エラー 問題 対応 予約ミス 誤案内"
-    >
-      <h2>トラブル対応</h2>
-      <p>過去クレームと対応例</p>
-    </a>
+      <a
+        href="machine.html"
+        class="card"
+        data-keywords="機械 レプトン ゴッドクリーナー ラドン 操作 水 入れ替え 糖尿病 スタートボタン"
+      >
+        <h2>機械操作</h2>
+        <p>レプトン / ゴッドクリーナー / ラドン</p>
+      </a>
+
+      <a
+        href="trouble.html"
+        class="card"
+        data-keywords="クレーム エラー 問題 対応 予約ミス 誤案内"
+      >
+        <h2>トラブル対応</h2>
+        <p>過去クレームと対応例</p>
+      </a>
+
+    </div>
 
   </div>
 
   <!-- 説明・接客 -->
-  <div class="section-title">説明・接客</div>
+  <div class="section">
 
-  <div class="grid">
+    <div class="section-title">説明・接客</div>
 
-    <a
-      href="service.html"
-      class="card"
-      data-keywords="水素 ゴッドクリーナー ラドン サービス 説明 接客"
-    >
-      <h2>サービス説明</h2>
-      <p>水素・ゴッドクリーナー・ラドン</p>
-    </a>
+    <div class="grid">
 
-    <a
-      href="option.html"
-      class="card"
-      data-keywords="お友達特典 紹介特典 ラドンマット ゴーグル 周年 ハロウィン イベント キャンペーン"
-    >
-      <h2>特典・オプション</h2>
-      <p>各種特典 / オプション / 過去のイベント</p>
-    </a>
+      <a
+        href="service.html"
+        class="card"
+        data-keywords="水素 ゴッドクリーナー ラドン サービス 説明 接客"
+      >
+        <h2>サービス説明</h2>
+        <p>水素・ゴッドクリーナー・ラドン</p>
+      </a>
+
+      <a
+        href="option.html"
+        class="card"
+        data-keywords="お友達特典 紹介特典 ラドンマット ゴーグル 周年 ハロウィン イベント キャンペーン"
+      >
+        <h2>特典・オプション</h2>
+        <p>各種特典 / オプション / 過去のイベント</p>
+      </a>
+
+    </div>
 
   </div>
 
   <!-- システム・操作 -->
-  <div class="section-title">システム・操作</div>
+  <div class="section">
 
-  <div class="grid">
+    <div class="section-title">システム・操作</div>
 
-    <a
-      href="comingsoon.html"
-      class="card"
-      data-keywords="coming soon 使用方法"
-    >
-      <span class="badge new">NEW</span>
-      <h2>カミングスーン</h2>
-      <p>使用方法</p>
-    </a>
+    <div class="grid">
 
-    <a
-      href="salonboard.html"
-      class="card"
-      data-keywords="サロンボード 予約 管理 ホットペッパー"
-    >
-      <h2>サロンボード</h2>
-      <p>予約管理の操作方法</p>
-    </a>
+      <a
+        href="comingsoon.html"
+        class="card"
+        data-keywords="coming soon 使用方法"
+      >
+        <span class="badge new">NEW</span>
+        <h2>カミングスーン</h2>
+        <p>使用方法</p>
+      </a>
 
-    <a
-      href="cashier.html"
-      class="card"
-      data-keywords="レジ締め 会計 精算 closing 現金"
-    >
-      <h2>レジ締め</h2>
-      <p>締め作業の手順</p>
-    </a>
+      <a
+        href="salonboard.html"
+        class="card"
+        data-keywords="サロンボード 予約 管理 ホットペッパー"
+      >
+        <h2>サロンボード</h2>
+        <p>予約管理の操作方法</p>
+      </a>
 
-    <a
-      href="order.html"
-      class="card"
-      data-keywords="発注 仕入れ 注文 在庫"
-    >
-      <h2>発注方法</h2>
-      <p>仕入れ・注文手順</p>
-    </a>
+      <a
+        href="cashier.html"
+        class="card"
+        data-keywords="レジ締め 会計 精算 closing 現金"
+      >
+        <h2>レジ締め</h2>
+        <p>締め作業の手順</p>
+      </a>
+
+      <a
+        href="order.html"
+        class="card"
+        data-keywords="発注 仕入れ 注文 在庫"
+      >
+        <h2>発注方法</h2>
+        <p>仕入れ・注文手順</p>
+      </a>
+
+    </div>
 
   </div>
 
   <!-- データ管理 -->
-  <div class="section-title">データ管理</div>
+  <div class="section">
 
-  <div class="grid">
+    <div class="section-title">データ管理</div>
 
-    <a
-      href="excel.html"
-      class="card"
-      data-keywords="Excel エクセル 売上 顧客 チケット ポイント"
-    >
-      <h2>Excel入力</h2>
-      <p>チケット・顧客・売上管理</p>
-    </a>
+    <div class="grid">
+
+      <a
+        href="excel.html"
+        class="card"
+        data-keywords="Excel エクセル 売上 顧客 チケット ポイント"
+      >
+        <h2>Excel入力</h2>
+        <p>チケット・顧客・売上管理</p>
+      </a>
+
+    </div>
 
   </div>
 
   <!-- その他 -->
-  <div class="section-title">その他</div>
+  <div class="section">
 
-  <div class="grid">
+    <div class="section-title">その他</div>
 
-    <a
-      href="other.html"
-      class="card"
-      data-keywords="補足 イレギュラー その他"
-    >
-      <h2>その他</h2>
-      <p>イレギュラー・補足事項</p>
-    </a>
+    <div class="grid">
 
-    <a
-      href="rule.html"
-      class="card"
-      data-keywords="ルール 規則 注意事項 禁止"
-    >
-      <h2>ルール</h2>
-      <p>店内ルール・注意事項</p>
-    </a>
+      <a
+        href="other.html"
+        class="card"
+        data-keywords="補足 イレギュラー その他"
+      >
+        <h2>その他</h2>
+        <p>イレギュラー・補足事項</p>
+      </a>
 
-    <a
-      href="document.html"
-      class="card"
-      data-keywords="資料 データ PDF 参考"
-    >
-      <h2>役立つ資料</h2>
-      <p>説明資料・参考データ</p>
-    </a>
+      <a
+        href="rule.html"
+        class="card"
+        data-keywords="ルール 規則 注意事項 禁止"
+      >
+        <h2>ルール</h2>
+        <p>店内ルール・注意事項</p>
+      </a>
+
+      <a
+        href="document.html"
+        class="card"
+        data-keywords="資料 データ PDF 参考"
+      >
+        <h2>役立つ資料</h2>
+        <p>説明資料・参考データ</p>
+      </a>
+
+    </div>
 
   </div>
 
@@ -479,6 +504,8 @@ async function loadPageContents(){
 
   document.getElementById("loadingText").style.display = "none";
 
+  document.getElementById("searchInput").disabled = false;
+
 }
 
 
@@ -539,8 +566,31 @@ function searchManual(){
 
   });
 
+
+  // セクションごと非表示
+  const sections =
+    document.querySelectorAll(".section");
+
+  sections.forEach(section=>{
+
+    const visibleCards =
+      section.querySelectorAll(
+        '.card:not([style*="display: none"])'
+      );
+
+    section.style.display =
+      visibleCards.length > 0
+      ? ""
+      : "none";
+
+  });
+
+
+  // 該当なし表示
   document.getElementById("noResult").style.display =
-    visibleCount === 0 ? "block" : "none";
+    visibleCount === 0
+    ? "block"
+    : "none";
 
 }
 

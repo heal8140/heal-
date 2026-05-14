@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>特典・オプション | heal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:"Noto Sans JP",sans-serif;
+  background:#f2f2f2;
+  color:#333;
+  line-height:1.7;
+}
+
+header{
+  background:#3a3a3a;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
+.container{
+  max-width:1000px;
+  margin:20px auto;
+  padding:0 15px;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:15px;
+  text-decoration:none;
+  color:#555;
+  font-size:14px;
+}
+
+/* タブ */
+
+.tabs{
+  display:flex;
+  margin-bottom:20px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#dcdcdc;
+}
+
+.tab{
+  flex:1;
+  padding:18px 10px;
+  text-align:center;
+  background:#dcdcdc;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:600;
+  transition:0.2s;
+}
+
+.tab:hover{
+  background:#cfcfcf;
+}
+
+.tab.active{
+  background:#3a3a3a;
+  color:#fff;
+}
+
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+/* ブロック */
+
+.block{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.block h2{
+  margin-top:0;
+  font-size:22px;
+  border-left:4px solid #3a3a3a;
+  padding-left:10px;
+}
+
+/* ステップ */
+
+.step{
+  margin-top:30px;
+  padding-bottom:25px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.step:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+
+.step-title{
+  font-weight:600;
+  font-size:17px;
+  margin-bottom:10px;
+}
+
+/* ノート */
+
+.note{
+  margin-top:10px;
+  padding:14px;
+  background:#fff3cd;
+  border-left:4px solid #ffcc00;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.gray-note{
+  margin-top:10px;
+  padding:14px;
+  background:#fafafa;
+  border-left:4px solid #3a3a3a;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.danger{
+  margin-top:10px;
+  padding:14px;
+  background:#ffe5e5;
+  border-left:4px solid #ff4d4d;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* リンク */
+
+.link{
+  display:inline-block;
+  margin-top:10px;
+  font-size:14px;
+}
+
+/* 画像 */
+
+.image-box{
+  margin-top:15px;
+  text-align:center;
+}
+
+.image-box img{
+  width:100%;
+  max-width:900px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#888;
+  margin:40px 0 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>特典・オプション</h1>
+</header>
+
+<div class="container">
+
+  <a href="index.html" class="back">← 戻る</a>
+
+  <!-- タブ -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(0)">会員特典</div>
+    <div class="tab" onclick="showTab(1)">オプション</div>
+    <div class="tab" onclick="showTab(2)">イベント履歴</div>
+  </div>
+
+  <!-- タブ① -->
+  <div class="tab-content active">
+
+    <div class="block">
+
+      <h2>会員特典</h2>
+
+      <!-- ① -->
+      <div class="step">
+
+        <div class="step-title">
+          ① 吸い放題会員特典
+        </div>
+
+        <div class="gray-note">
+          ・〇〇特典<br>
+          ・〇〇特典<br>
+          ・〇〇特典
+        </div>
+
+      </div>
+
+      <!-- ② -->
+      <div class="step">
+
+        <div class="step-title">
+          ② マンスリー特典
+        </div>
+
+        <div class="gray-note">
+          ・〇〇特典<br>
+          ・〇〇特典<br>
+          ・〇〇特典
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- タブ② -->
+  <div class="tab-content">
+
+    <div class="block">
+
+      <h2>オプション</h2>
+
+      <!-- ① -->
+      <div class="step">
+
+        <div class="step-title">
+          ① ラドンマット
+        </div>
+
+        <div class="gray-note">
+          ・使用方法<br>
+          ・説明方法<br>
+          ・注意事項
+        </div>
+
+      </div>
+
+      <!-- ② -->
+      <div class="step">
+
+        <div class="step-title">
+          ② ゴーグル
+        </div>
+
+        <div class="gray-note">
+          ・使用方法<br>
+          ・説明方法<br>
+          ・注意事項
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- タブ③ -->
+  <div class="tab-content">
+
+    <div class="block">
+
+      <h2>イベント履歴</h2>
+
+      <!-- ① -->
+      <div class="step">
+
+        <div class="step-title">
+          ① 1周年イベント
+        </div>
+
+        <div class="gray-note">
+          ・実施期間<br>
+          ・内容<br>
+          ・対象<br>
+          ・LINE配信文<br>
+          ・POP画像
+        </div>
+
+      </div>
+
+      <!-- ② -->
+      <div class="step">
+
+        <div class="step-title">
+          ② ハロウィンイベント
+        </div>
+
+        <div class="gray-note">
+          ・実施期間<br>
+          ・内容<br>
+          ・対象<br>
+          ・LINE配信文<br>
+          ・POP画像
+        </div>
+
+      </div>
+
+      <!-- ③ -->
+      <div class="step">
+
+        <div class="step-title">
+          ③ 年末キャンペーン
+        </div>
+
+        <div class="gray-note">
+          ・実施期間<br>
+          ・内容<br>
+          ・対象<br>
+          ・LINE配信文<br>
+          ・POP画像
+        </div>
+
+      </div>
+
+      <!-- ④ -->
+      <div class="step">
+
+        <div class="step-title">
+          ④ その他過去キャンペーン
+        </div>
+
+        <div class="gray-note">
+          ・過去イベント内容を記載
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © heal Manual
+</footer>
+
+<script>
+
+function showTab(index){
+
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab, i)=>{
+    tab.classList.toggle("active", i === index);
+  });
+
+  contents.forEach((content, i)=>{
+    content.classList.toggle("active", i === index);
+  });
+
+}
+
+</script>
+
+</body>
+</html>

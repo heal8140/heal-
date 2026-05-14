@@ -10,6 +10,10 @@
 
   <style>
 
+    *{
+      box-sizing:border-box;
+    }
+
     body{
       margin:0;
       font-family:"Noto Sans JP",sans-serif;
@@ -43,7 +47,6 @@
       border:none;
       border-radius:10px;
       font-size:15px;
-      box-sizing:border-box;
       background:#fff;
       box-shadow:0 4px 10px rgba(0,0,0,0.05);
     }
@@ -52,19 +55,17 @@
       outline:none;
     }
 
-    .search-area input:disabled{
-      background:#eee;
-      cursor:not-allowed;
+    .loading{
+      text-align:center;
+      font-size:13px;
+      color:#777;
+      margin-top:10px;
     }
 
     .container{
       max-width:1000px;
       margin:30px auto;
       padding:0 15px;
-    }
-
-    .section{
-      margin-bottom:30px;
     }
 
     .section-title{
@@ -84,16 +85,14 @@
 
     .card{
       background:#fff;
-      padding:10px 16px;
+      padding:14px 16px;
       border-radius:10px;
       text-decoration:none;
       color:#333;
       box-shadow:0 4px 10px rgba(0,0,0,0.05);
       transition:0.2s;
       position:relative;
-
-      min-height:60px;
-      box-sizing:border-box;
+      min-height:72px;
 
       display:flex;
       flex-direction:column;
@@ -106,24 +105,17 @@
     }
 
     .card h2{
-      margin:0 0 4px;
+      margin:0 0 5px;
       font-size:16px;
       font-weight:600;
-
-      overflow:hidden;
-      white-space:nowrap;
-      text-overflow:ellipsis;
+      line-height:1.4;
     }
 
     .card p{
+      margin:0;
       font-size:13px;
       color:#666;
-      margin:0;
       line-height:1.5;
-
-      overflow:hidden;
-      white-space:nowrap;
-      text-overflow:ellipsis;
     }
 
     .badge{
@@ -139,13 +131,6 @@
 
     .new{
       background:#6c8ef5;
-    }
-
-    .loading{
-      text-align:center;
-      font-size:13px;
-      color:#777;
-      margin-top:10px;
     }
 
     .no-result{
@@ -180,7 +165,6 @@
   <h1>作業マニュアル</h1>
 </header>
 
-<!-- 検索 -->
 <div class="search-area">
 
   <input
@@ -188,7 +172,6 @@
     id="searchInput"
     placeholder="マニュアル検索..."
     onkeyup="searchManual()"
-    disabled
   >
 
   <div class="loading" id="loadingText">
@@ -200,175 +183,155 @@
 <div class="container">
 
   <!-- 基本業務 -->
-  <div class="section">
+  <div class="section-title">基本業務</div>
 
-    <div class="section-title">基本業務</div>
+  <div class="grid">
 
-    <div class="grid">
+    <a
+      href="reception.html"
+      class="card"
+      data-keywords="受付 来店 初回 新規 既存 接客"
+    >
+      <h2>受付対応</h2>
+      <p>新規・既存の来店フロー</p>
+    </a>
 
-      <a
-        href="reception.html"
-        class="card"
-        data-keywords="受付 来店 初回 新規 既存 接客"
-      >
-        <h2>受付対応</h2>
-        <p>新規・既存の来店フロー</p>
-      </a>
+    <a
+      href="machine.html"
+      class="card"
+      data-keywords="機械 レプトン 水入れ替え 水交換 レプトン水入れ替え レプトン水交換 ゴッドクリーナー ラドン 操作 糖尿病 スタートボタン"
+    >
+      <h2>機械操作</h2>
+      <p>レプトン / ゴッドクリーナー / ラドン</p>
+    </a>
 
-      <a
-        href="machine.html"
-        class="card"
-        data-keywords="機械 レプトン ゴッドクリーナー ラドン 操作 水 入れ替え 糖尿病 スタートボタン"
-      >
-        <h2>機械操作</h2>
-        <p>レプトン / ゴッドクリーナー / ラドン</p>
-      </a>
-
-      <a
-        href="trouble.html"
-        class="card"
-        data-keywords="クレーム エラー 問題 対応 予約ミス 誤案内"
-      >
-        <h2>トラブル対応</h2>
-        <p>過去クレームと対応例</p>
-      </a>
-
-    </div>
+    <a
+      href="trouble.html"
+      class="card"
+      data-keywords="クレーム エラー 問題 対応 予約ミス 誤案内"
+    >
+      <h2>トラブル対応</h2>
+      <p>過去クレームと対応例</p>
+    </a>
 
   </div>
 
   <!-- 説明・接客 -->
-  <div class="section">
+  <div class="section-title">説明・接客</div>
 
-    <div class="section-title">説明・接客</div>
+  <div class="grid">
 
-    <div class="grid">
+    <a
+      href="service.html"
+      class="card"
+      data-keywords="水素 ゴッドクリーナー ラドン サービス 説明 接客"
+    >
+      <h2>サービス説明</h2>
+      <p>水素・ゴッドクリーナー・ラドン</p>
+    </a>
 
-      <a
-        href="service.html"
-        class="card"
-        data-keywords="水素 ゴッドクリーナー ラドン サービス 説明 接客"
-      >
-        <h2>サービス説明</h2>
-        <p>水素・ゴッドクリーナー・ラドン</p>
-      </a>
-
-      <a
-        href="option.html"
-        class="card"
-        data-keywords="お友達特典 紹介特典 ラドンマット ゴーグル 周年 ハロウィン イベント キャンペーン"
-      >
-        <h2>特典・オプション</h2>
-        <p>各種特典 / オプション / 過去のイベント</p>
-      </a>
-
-    </div>
+    <a
+      href="option.html"
+      class="card"
+      data-keywords="お友達特典 紹介特典 ラドンマット ゴーグル 周年 ハロウィン イベント キャンペーン"
+    >
+      <h2>特典・オプション</h2>
+      <p>各種特典 / オプション / 過去のイベント</p>
+    </a>
 
   </div>
 
-  <!-- システム・操作 -->
-  <div class="section">
+  <!-- システム -->
+  <div class="section-title">システム・操作</div>
 
-    <div class="section-title">システム・操作</div>
+  <div class="grid">
 
-    <div class="grid">
+    <a
+      href="comingsoon.html"
+      class="card"
+      data-keywords="coming soon 使用方法"
+    >
+      <span class="badge new">NEW</span>
+      <h2>カミングスーン</h2>
+      <p>使用方法</p>
+    </a>
 
-      <a
-        href="comingsoon.html"
-        class="card"
-        data-keywords="coming soon 使用方法"
-      >
-        <span class="badge new">NEW</span>
-        <h2>カミングスーン</h2>
-        <p>使用方法</p>
-      </a>
+    <a
+      href="salonboard.html"
+      class="card"
+      data-keywords="サロンボード 予約 管理 ホットペッパー"
+    >
+      <h2>サロンボード</h2>
+      <p>予約管理の操作方法</p>
+    </a>
 
-      <a
-        href="salonboard.html"
-        class="card"
-        data-keywords="サロンボード 予約 管理 ホットペッパー"
-      >
-        <h2>サロンボード</h2>
-        <p>予約管理の操作方法</p>
-      </a>
+    <a
+      href="cashier.html"
+      class="card"
+      data-keywords="レジ締め 会計 精算 closing 現金"
+    >
+      <h2>レジ締め</h2>
+      <p>締め作業の手順</p>
+    </a>
 
-      <a
-        href="cashier.html"
-        class="card"
-        data-keywords="レジ締め 会計 精算 closing 現金"
-      >
-        <h2>レジ締め</h2>
-        <p>締め作業の手順</p>
-      </a>
-
-      <a
-        href="order.html"
-        class="card"
-        data-keywords="発注 仕入れ 注文 在庫"
-      >
-        <h2>発注方法</h2>
-        <p>仕入れ・注文手順</p>
-      </a>
-
-    </div>
+    <a
+      href="order.html"
+      class="card"
+      data-keywords="発注 仕入れ 注文 在庫"
+    >
+      <h2>発注方法</h2>
+      <p>仕入れ・注文手順</p>
+    </a>
 
   </div>
 
-  <!-- データ管理 -->
-  <div class="section">
+  <!-- データ -->
+  <div class="section-title">データ管理</div>
 
-    <div class="section-title">データ管理</div>
+  <div class="grid">
 
-    <div class="grid">
-
-      <a
-        href="excel.html"
-        class="card"
-        data-keywords="Excel エクセル 売上 顧客 チケット ポイント"
-      >
-        <h2>Excel入力</h2>
-        <p>チケット・顧客・売上管理</p>
-      </a>
-
-    </div>
+    <a
+      href="excel.html"
+      class="card"
+      data-keywords="Excel エクセル 売上 顧客 チケット ポイント"
+    >
+      <h2>Excel入力</h2>
+      <p>チケット・顧客・売上管理</p>
+    </a>
 
   </div>
 
   <!-- その他 -->
-  <div class="section">
+  <div class="section-title">その他</div>
 
-    <div class="section-title">その他</div>
+  <div class="grid">
 
-    <div class="grid">
+    <a
+      href="other.html"
+      class="card"
+      data-keywords="補足 イレギュラー その他"
+    >
+      <h2>その他</h2>
+      <p>イレギュラー・補足事項</p>
+    </a>
 
-      <a
-        href="other.html"
-        class="card"
-        data-keywords="補足 イレギュラー その他"
-      >
-        <h2>その他</h2>
-        <p>イレギュラー・補足事項</p>
-      </a>
+    <a
+      href="rule.html"
+      class="card"
+      data-keywords="ルール 規則 注意事項 禁止"
+    >
+      <h2>ルール</h2>
+      <p>店内ルール・注意事項</p>
+    </a>
 
-      <a
-        href="rule.html"
-        class="card"
-        data-keywords="ルール 規則 注意事項 禁止"
-      >
-        <h2>ルール</h2>
-        <p>店内ルール・注意事項</p>
-      </a>
-
-      <a
-        href="document.html"
-        class="card"
-        data-keywords="資料 データ PDF 参考"
-      >
-        <h2>役立つ資料</h2>
-        <p>説明資料・参考データ</p>
-      </a>
-
-    </div>
+    <a
+      href="document.html"
+      class="card"
+      data-keywords="資料 データ PDF 参考"
+    >
+      <h2>役立つ資料</h2>
+      <p>説明資料・参考データ</p>
+    </a>
 
   </div>
 
@@ -385,140 +348,87 @@
 <script>
 
 const pages = [
-
-  {
-    title:"受付対応",
-    url:"reception.html"
-  },
-
-  {
-    title:"機械操作",
-    url:"machine.html"
-  },
-
-  {
-    title:"トラブル対応",
-    url:"trouble.html"
-  },
-
-  {
-    title:"サービス説明",
-    url:"service.html"
-  },
-
-  {
-    title:"特典・オプション",
-    url:"option.html"
-  },
-
-  {
-    title:"カミングスーン",
-    url:"comingsoon.html"
-  },
-
-  {
-    title:"サロンボード",
-    url:"salonboard.html"
-  },
-
-  {
-    title:"レジ締め",
-    url:"cashier.html"
-  },
-
-  {
-    title:"発注方法",
-    url:"order.html"
-  },
-
-  {
-    title:"Excel入力",
-    url:"excel.html"
-  },
-
-  {
-    title:"その他",
-    url:"other.html"
-  },
-
-  {
-    title:"ルール",
-    url:"rule.html"
-  },
-
-  {
-    title:"役立つ資料",
-    url:"document.html"
-  }
-
+  "reception.html",
+  "machine.html",
+  "trouble.html",
+  "service.html",
+  "option.html",
+  "comingsoon.html",
+  "salonboard.html",
+  "cashier.html",
+  "order.html",
+  "excel.html",
+  "other.html",
+  "rule.html",
+  "document.html"
 ];
 
-
-// 本文保存
 const pageContents = {};
 
+function normalizeText(text){
 
-// ページ読み込み
+  return text
+    .toLowerCase()
+    .replace(/\s+/g,"")
+    .replace(/[・\/\-→←（）()【】「」]/g,"");
+
+}
+
 async function loadPageContents(){
 
-  for(const page of pages){
+  for(const url of pages){
 
     try{
 
-      const response = await fetch(page.url);
+      const response = await fetch(url);
 
       if(!response.ok){
-        throw new Error("読み込み失敗");
+        throw new Error(url);
       }
 
       const html = await response.text();
 
-      const parser =
-        new DOMParser();
+      const parser = new DOMParser();
 
-      const doc =
-        parser.parseFromString(
-          html,
-          "text/html"
-        );
+      const doc = parser.parseFromString(
+        html,
+        "text/html"
+      );
 
       const text =
-        doc.body.textContent
-        .toLowerCase()
-        .replace(/\s+/g,"");
+        normalizeText(
+          doc.body.textContent || ""
+        );
 
-      pageContents[page.url] = text;
+      pageContents[url] = text;
 
-      console.log(page.url + " 読み込み成功");
+      console.log(url + " 読み込み成功");
 
     }catch(error){
 
       console.error(
         "読み込み失敗:",
-        page.url
+        url
       );
 
     }
 
   }
 
-  document.getElementById("loadingText").style.display = "none";
-
-  document.getElementById("searchInput").disabled = false;
+  document.getElementById(
+    "loadingText"
+  ).style.display = "none";
 
 }
 
-
-// 検索
 function searchManual(){
 
-  const input =
-    document.getElementById("searchInput");
-
   const filter =
-    input.value
-    .toLowerCase()
-    .replace(/\s+/g,"");
+    normalizeText(
+      document.getElementById(
+        "searchInput"
+      ).value
+    );
 
   const cards =
     document.querySelectorAll(".card");
@@ -531,21 +441,21 @@ function searchManual(){
       card.getAttribute("href");
 
     const title =
-      card.querySelector("h2")
-      ?.textContent
-      .toLowerCase()
-      .replace(/\s+/g,"") || "";
+      normalizeText(
+        card.querySelector("h2")
+        ?.textContent || ""
+      );
 
     const text =
-      card.querySelector("p")
-      ?.textContent
-      .toLowerCase()
-      .replace(/\s+/g,"") || "";
+      normalizeText(
+        card.querySelector("p")
+        ?.textContent || ""
+      );
 
     const keywords =
-      card.dataset.keywords
-      ?.toLowerCase()
-      .replace(/\s+/g,"") || "";
+      normalizeText(
+        card.dataset.keywords || ""
+      );
 
     const pageText =
       pageContents[href] || "";
@@ -558,7 +468,7 @@ function searchManual(){
       pageText.includes(filter);
 
     card.style.display =
-      isMatch ? "" : "none";
+      isMatch ? "flex" : "none";
 
     if(isMatch){
       visibleCount++;
@@ -566,43 +476,19 @@ function searchManual(){
 
   });
 
-
-  // セクションごと非表示
-  const sections =
-    document.querySelectorAll(".section");
-
-  sections.forEach(section=>{
-
-    const visibleCards =
-      section.querySelectorAll(
-        '.card:not([style*="display: none"])'
-      );
-
-    section.style.display =
-      visibleCards.length > 0
-      ? ""
-      : "none";
-
-  });
-
-
-  // 該当なし表示
-  document.getElementById("noResult").style.display =
+  document.getElementById(
+    "noResult"
+  ).style.display =
     visibleCount === 0
     ? "block"
     : "none";
 
 }
 
-
-// 初回実行
-window.addEventListener("load", async ()=>{
-
-  await loadPageContents();
-
-  console.log("全文検索準備完了");
-
-});
+window.addEventListener(
+  "load",
+  loadPageContents
+);
 
 </script>
 
